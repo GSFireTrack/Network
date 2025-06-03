@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FireTrack Network - Monitoramento de Queimadas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="navbar">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <img
+              src="./Pictorial.png"
+              alt="Pictorial Fire Track"
+              class="logo-img"
+              width="100"
+            />
+            <span class="logo-text">FireTrack Network</span>
+          </div>
+          <nav>
+            <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+            <ul class="nav-list">
+              <li><a href="#status">Status</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#arquitetura">Arquitetura</a></li>
+              <li><a href="#funcionalidades">Funcionalidades</a></li>
+              <li><a href="#equipe">Equipe</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1>🌐 FireTrack Network</h1>
+          <p>
+            Infraestrutura de rede distribuída e resiliente para monitoramento,
+            prevenção e resposta rápida a queimadas no Brasil
+          </p>
+          <button class="btn" onclick="toggleAlertSystem()">
+            🚨 Sistema de Alertas
+          </button>
+          <button class="btn" onclick="showNetworkTest()">
+            🧪 Testar Conectividade
+          </button>
+        </div>
+      </section>
+
+      <section id="status" class="container">
+        <div class="status-grid">
+          <div class="status-card">
+            <span class="status-icon status-online">🌍</span>
+            <h3>Região Norte</h3>
+            <p>Monitoramento Ambiental</p>
+            <p>
+              <strong>Status:</strong> <span class="status-online">Online</span>
+            </p>
+            <p><strong>IP:</strong> 192.168.1.1/24</p>
+          </div>
+          <div class="status-card">
+            <span class="status-icon status-online">💻</span>
+            <h3>Região Sul</h3>
+            <p>Processamento Principal</p>
+            <p>
+              <strong>Status:</strong> <span class="status-online">Online</span>
+            </p>
+            <p><strong>IP:</strong> 192.168.2.1/24</p>
+          </div>
+          <div class="status-card">
+            <span class="status-icon status-online">🔄</span>
+            <h3>Roteador Central</h3>
+            <p>Conectividade Inter-Regional</p>
+            <p>
+              <strong>Status:</strong> <span class="status-online">Ativo</span>
+            </p>
+            <p><strong>Uptime:</strong> <span id="uptime">99.9%</span></p>
+          </div>
+          <div class="status-card">
+            <span class="status-icon status-warning">📡</span>
+            <h3>Sensores IoT</h3>
+            <p>Monitoramento Distribuído</p>
+            <p>
+              <strong>Ativos:</strong> <span id="sensors-count">847</span>/850
+            </p>
+            <p><strong>Alertas:</strong> <span id="alerts-count">2</span></p>
+          </div>
+        </div>
+
+        <div class="connectivity-status">
+          <div class="connection-line">Norte ↔ Sul: Conectado</div>
+          <div class="connection-line">DNS: Funcionando</div>
+          <div class="connection-line">HTTP: Disponível</div>
+          <div class="connection-line">Backup: Sincronizado</div>
+        </div>
+      </section>
+
+      <div id="alert-system" style="display: none; scroll-margin-top: 20px">
+        <div class="container">
+          <div class="alert-banner">
+            🚨 <strong>ALERTA ATIVO:</strong> Foco de calor detectado próximo à
+            infraestrutura crítica - Região Norte
+          </div>
+        </div>
+      </div>
+
+      <section id="sobre" class="container">
+        <div class="section">
+          <h2>🌐 Sobre o Projeto</h2>
+          <p>
+            O <strong>FireTrack Network</strong> é uma solução de infraestrutura
+            de rede voltada para
+            <strong
+              >monitoramento, prevenção e resposta rápida a queimadas no
+              Brasil</strong
+            >. O projeto implementa uma arquitetura de rede distribuída e
+            resiliente, capaz de manter operações críticas mesmo durante eventos
+            extremos como os incêndios florestais.
+          </p>
+
+          <p>
+            Inspirado pelos recentes incêndios em Los Angeles e pelos desafios
+            enfrentados por data centers durante queimadas, o FireTrack Network
+            propõe uma
+            <strong>infraestrutura geograficamente distribuída</strong> que
+            garante continuidade operacional, monitoramento distribuído,
+            redundância de conectividade e resposta automatizada a emergências.
+          </p>
+
+          <p>
+            O sistema integra <strong>dados oficiais do INPE</strong>,
+            <strong>sensores IoT</strong> e
+            <strong>tecnologias de rede avançadas</strong> para criar uma
+            plataforma robusta de combate às queimadas.
+          </p>
+        </div>
+      </section>
+
+      <section id="arquitetura" class="container">
+        <div class="section">
+          <h2>🏗️ Arquitetura de Rede</h2>
+          <div class="network-diagram">
+            <img
+              src="./Network_Topology_Diagram.png"
+              alt="Diagrama de Arquitetura de Rede FireTrack"
+              class="network-image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="funcionalidades" class="container">
+        <div class="section">
+          <h2>🌟 Funcionalidades Principais</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <h4>🗺️ Mapa Interativo Distribuído</h4>
+              <p>
+                Visualização geográfica de focos de calor com dados replicados
+                entre regiões, garantindo acesso mesmo durante falhas locais.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h4>🔄 Redundância Automática</h4>
+              <p>
+                Failover automático entre servidores das duas regiões, com
+                sincronização em tempo real de dados críticos.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h4>📡 Monitoramento de Infraestrutura</h4>
+              <p>
+                Supervisão contínua da saúde da rede, com alertas automáticos
+                para falhas de conectividade ou equipamentos.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h4>🌐 Conectividade Resiliente</h4>
+              <p>
+                Múltiplos links de internet por região, com balanceamento de
+                carga e failover transparente.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h4>📊 Dashboard de Status</h4>
+              <p>
+                Interface web mostrando status em tempo real de todos os
+                componentes da infraestrutura.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h4>💾 Backup Geográfico</h4>
+              <p>
+                Replicação automática de dados entre regiões, garantindo
+                continuidade mesmo com perda total de uma região.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="equipe" class="container">
+        <div class="section">
+          <h2>👥 Equipe</h2>
+          <div class="team-grid">
+            <div class="team-member">
+              <h4>Augusto Barcelos Barros</h4>
+              <p><strong>RM:</strong> 565065</p>
+            </div>
+            <div class="team-member">
+              <h4>Jefferson Junior Alvarez Urbina</h4>
+              <p><strong>RM:</strong> 558497</p>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 2rem">
+            <p>
+              <strong>Turma:</strong> 2ESPX |
+              <strong>Disciplina:</strong> Network Architect Solutions
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 FireTrack Network.</p>
+        <p>
+          Organização GitHub:
+          <a href="https://github.com/GSFireTrack" style="color: #60a5fa"
+            >GSFireTrack</a
+          >
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
